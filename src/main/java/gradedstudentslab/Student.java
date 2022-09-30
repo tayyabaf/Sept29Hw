@@ -33,9 +33,9 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public ArrayList<Double> getExamScores() {
-        return examScores;
-    }
+   // public ArrayList<Double> getExamScores() {
+//        return examScores;
+//    }
 
     public void setExamScores(ArrayList<Double> examScores) {
         this.examScores = examScores;
@@ -47,11 +47,37 @@ public class Student {
     }
 
     //returns a string representation of all exams taken
-    public String getExamScores(Student student){
-        String examScoresAsString = "";
+    public String getExamScores(){
+        String examScoresAsString = "Exam Scores: ";
             for (Double x : examScores) {
-                examScoresAsString += "Exam " + (1+ examScores.indexOf(x)) + " -> " + (x) + "\n";
+                examScoresAsString += "\n\tExam " + (1+ examScores.indexOf(x)) + " -> " + (x) ;
             }
         return examScoresAsString;
+    }
+
+    //adds exam score to examScores
+    public void addExamScore(double examScore){
+        examScores.add(examScore);
+    }
+
+    //sets a current exam score to a new exam score
+    public void setExamScore(int examNumber, double newScore){
+        examScores.add(examNumber, newScore);
+    }
+
+    public double getAverageExamScore(){
+        double sum = 0;
+        for (Double x : examScores){
+            sum += x;
+        }
+        double average  = sum / (examScores.size());
+        return average;
+    }
+
+    //clean toString
+
+    @Override
+    public String toString() {
+        return "Student Name: " + firstName + " " + lastName + "\n> Average Score: " + getAverageExamScore() + "\n> " + getExamScores();
     }
 }
