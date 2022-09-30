@@ -11,6 +11,7 @@ public class Student {
     public Student(String firstName, String lastName, Double[] testScores) {
         this.firstName = firstName;
         this.lastName = lastName;
+        examScores=new ArrayList<>();
         for(int i = 0; i < testScores.length; i++){
             examScores.add(testScores[i]);
         }
@@ -48,11 +49,9 @@ public class Student {
     //returns a string representation of all exams taken
     public String getExamScores(Student student){
         String examScoresAsString = "";
-        for (int i = 0; i < examScores.size(); i++) {
             for (Double x : examScores) {
-                examScoresAsString += "Exam " + examScores.indexOf(x) + " " + x;
+                examScoresAsString += "Exam " + (1+ examScores.indexOf(x)) + " -> " + (x) + "\n";
             }
-        }
         return examScoresAsString;
     }
 }
