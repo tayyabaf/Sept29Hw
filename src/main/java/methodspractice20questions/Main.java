@@ -1,4 +1,4 @@
-package methodspractice;
+package methodspractice20questions;
 import java.util.Arrays;
 
 public class Main {
