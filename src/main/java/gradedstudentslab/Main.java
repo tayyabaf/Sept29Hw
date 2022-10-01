@@ -21,7 +21,7 @@ Student jules = new Student("Julianna", "baloney", examScores);
         Student [] students = { new Student("Sarah", "Bob", examScores1), new Student("Qris", "Mush", examScores2)};
         Classroom myClassroom = new Classroom(students);
 //        System.out.println(myClassroom.getAverageExamScore());
-        myClassroom.addStudent(new Student("Jules", "Kolek", examScores3));
+        myClassroom.addStudent(new Student("Marco", "Polo", examScores3));
         myClassroom.addStudent(jules);
         for (int i = 0; i < myClassroom.getStudents().length; i++){
             System.out.println(myClassroom.getStudents()[i]);

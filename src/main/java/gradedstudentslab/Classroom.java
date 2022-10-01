@@ -1,6 +1,8 @@
 package gradedstudentslab;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Classroom {
@@ -41,10 +43,11 @@ public class Classroom {
     }
 
     //add a student to the student list
-
-    //RECHECK!!!!!!!!!!!!!!!!!! make arraylist?
-    public void addStudent(Student student){
-//        students =[students.length-1] ;
-//        students = new student;
-    }
-}
+    public void addStudent(Student student) {
+        Student[] temporaryList = new Student[this.students.length+1];
+        for (int i = 0; i < this.students.length; i++){
+            temporaryList[i] = this.students[i];
+        }
+        temporaryList[temporaryList.length-1] = student;
+        students = temporaryList;
+    }}
