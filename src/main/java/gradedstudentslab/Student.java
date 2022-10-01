@@ -46,6 +46,13 @@ public class Student {
         return examScores.size();
     }
 
+    //method overloading so I can usegetExamScores in other classes and return as arrayList
+
+    public ArrayList<Double> getExamScores(int anyRandomNumber) {
+        return examScores;
+    }
+
+
     //returns a string representation of all exams taken
     public String getExamScores(){
         String examScoresAsString = "Exam Scores: ";

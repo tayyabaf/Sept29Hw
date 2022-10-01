@@ -1,5 +1,8 @@
 package gradedstudentslab;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Classroom {
     private Student [] students;
 
@@ -22,5 +25,26 @@ public class Classroom {
         return students;
     }
 
+    //avg exam score from array of students
+    public double getAverageExamScore(){
+        double sum = 0;
+        int numberOfExams = 0;
+        for(int i = 0; i < students.length; i++){
+            for (Double x: students[i].getExamScores(1)){
+                sum+= x;
+            }
+            numberOfExams += students[i].getExamScores(1).size();
 
+        }
+        double average = sum / numberOfExams;
+        return average;
+    }
+
+    //add a student to the student list
+
+    //RECHECK!!!!!!!!!!!!!!!!!! make arraylist?
+    public void addStudent(Student student){
+//        students =[students.length-1] ;
+//        students = new student;
+    }
 }
