@@ -38,16 +38,19 @@ public class Main {
         Arrays.sort(listOfPets);
 
         //invoke the makeNoise method on all the elements of the object array
-        System.out.println("Sorting objects by name:");
+        System.out.println("\nSorting objects by name:\n--------------------------");
         for (int i = 0; i < listOfPets.length; i++){
             System.out.print("Pet #" + (i+1) +": ");
             listOfPets[i].makeNoise();
         }
 
+
         //sort object array by type of pet, break ties by name
         Comparator petsTypeComparator = new TypeOfPetsComparator();
         Arrays.sort(listOfPets, petsTypeComparator);
-        System.out.println("Sorting objects by type:");
+
+        //invoke the makeNoise method on all the elements of the object array
+        System.out.println("\nSorting objects by type:\n--------------------------");
         for (int i = 0; i < listOfPets.length; i++){
             System.out.print("Pet #" + (i+1) +": ");
             listOfPets[i].makeNoise();
