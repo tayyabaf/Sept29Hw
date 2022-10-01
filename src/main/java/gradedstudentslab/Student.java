@@ -2,7 +2,7 @@ package gradedstudentslab;
 
 import java.util.ArrayList;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private String firstName;
     private String lastName;
     private ArrayList<Double> examScores;
@@ -82,9 +82,23 @@ public class Student {
     }
 
     //clean toString
-
     @Override
     public String toString() {
-        return "Student Name: " + firstName + " " + lastName + "\n> Average Score: " + getAverageExamScore() + "\n> " + getExamScores();
+        return "Student Name: " + firstName + " " + lastName + "\n> Average Score: " + getAverageExamScore() + "\n> " + getExamScores() +"\n";
+    }
+
+    //compare by average scores..if same then alphabetically by name
+    @Override
+    public int compareTo(Student o) {
+//        if(this.getAverageExamScore() == o.getAverageExamScore()){
+//            return this.firstName.compareTo(o.firstName);
+//        }
+        if(this.getAverageExamScore() > o.getAverageExamScore()) {
+            return 1;
+        }else if (this.getAverageExamScore() < o.getAverageExamScore()){
+            return -1;
+        }else{
+            return (this.firstName +this.getLastName()).compareTo(o.firstName + o.lastName);
+        }
     }
 }
