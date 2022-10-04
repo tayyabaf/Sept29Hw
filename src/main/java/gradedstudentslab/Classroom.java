@@ -70,57 +70,43 @@ public class Classroom{
 
     //compare by average scores..if same then alphabetically by name
         public Student[] getStudentsByScore(){
-        Arrays.sort(students);
+        Arrays.sort(this.students);
         return students;
         }
+
 
 
     //gradebook determined by percentiles
     //REDO!!!!!!!!!!!
     public Map<Student, Character> getGradeBook(){
         Map <Student, Character> studentsGradeBook = new HashMap<>();
-        double sumOfGrades = 0;
-        for (int i = 0; i < students.length; i++){
-            sumOfGrades += students[i].getAverageExamScore();
-        }
+        Map <Student, Double> positionOfStudent = new HashMap<>();
 
-        for (int i = 0; i < students.length; i++){
-            studentsGradeBook.put(students[i], 'I');
-            sumOfGrades += students[i].getAverageExamScore();
-        }
-        for (int i = 0; i < students.length; i++){
-
-        }
 
         for (int i = 0; i < getStudentsByScore().length; i++){
-            double valA = getStudentsByScore().length*.1;
-            if(i<= valA);
+            double length = getStudentsByScore().length -1;
+            double percentile = (i)/length;
+            positionOfStudent.put(getStudentsByScore()[i], percentile);
         }
-        for (Student x : studentsGradeBook.keySet()){
-            if(x.getAverageExamScore() >= (sumOfGrades*.1)){
-                studentsGradeBook.put(x, 'A');
-            }else if(x.getAverageExamScore() < (sumOfGrades*.1) && x.getAverageExamScore() >= (sumOfGrades*.29)){
-                studentsGradeBook.put(x, 'B');
-            }else if(x.getAverageExamScore() < (sumOfGrades*.29) && x.getAverageExamScore() >= (sumOfGrades*.50)){
-                studentsGradeBook.put(x, 'C');
-            }else if(x.getAverageExamScore() < (sumOfGrades*.5) && x.getAverageExamScore() >= (sumOfGrades*.89)){
-                studentsGradeBook.put(x, 'D');
-            }else if(x.getAverageExamScore() < (sumOfGrades*.89)){
-                studentsGradeBook.put(x, 'F');
+
+        for (Map.Entry<Student, Double> entry: positionOfStudent.entrySet()){
+            if(entry.getValue() >= (1-.1)){
+                studentsGradeBook.put(entry.getKey(), 'A');
+            }else if(entry.getValue() <(1-.1) && entry.getValue() >=(1-.29)){
+                studentsGradeBook.put(entry.getKey(), 'B');
+            }else if(entry.getValue() <(1-.29) && entry.getValue() >=(1-.5)){
+                studentsGradeBook.put(entry.getKey(), 'C');
+            }else if(entry.getValue() <(1-.5) && entry.getValue() >=(1-.89)){
+                studentsGradeBook.put(entry.getKey(), 'D');
+            }else if(entry.getValue() <(1-.89)){
+                studentsGradeBook.put(entry.getKey(), 'F');
             }
+
         }
 
-
-//        for (int i = 0; i < students.length; i++){
-//            Character grade;
-//            if(students[i].getAverageExamScore() == students[i+1].getAverageExamScore()){
-//            }
-//            studentsGradeBook.put(students[i], grade);
-//
-//        }
         return studentsGradeBook;
     }
-    }
+}
 
 
 

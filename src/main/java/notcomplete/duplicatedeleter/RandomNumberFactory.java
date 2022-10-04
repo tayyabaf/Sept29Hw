@@ -1,4 +1,4 @@
-package duplicatedeleter;
+package notcomplete.duplicatedeleter;
 
 import java.util.Random;
 

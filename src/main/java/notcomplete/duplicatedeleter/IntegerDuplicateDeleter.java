@@ -1,4 +1,4 @@
-package duplicatedeleter;
+package notcomplete.duplicatedeleter;
 
 /**
  * Created by leon on 1/29/18.

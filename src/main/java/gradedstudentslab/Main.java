@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
 //        String firstName = "Leon";
 //        String lastName = "Hunter";
-        Double[] examScores = { 100.0, 95.0, 123.0, 96.0 };
-        Double[] examScores1 = { 100.0, 95.0,  96.0};
+        Double[] examScores = { 100.0, 95.0, 100.0, 96.0 };
+        Double[] examScores1 = { 100.0, 86.0,  96.0};
         Double[] examScores2 = { 56.7, 34.6, 99.9 };
         Double[] examScores3 = { 56.7, 99.9 };
         Double[] examScores4 = { 28.2, 34.6, 0.09 };
@@ -30,7 +30,7 @@ Student jules = new Student("Julianna", "baloney", examScores);
 //        }
        // myClassroom.removeStudent("Marco", "Polo");
       //System.out.println(Arrays.toString(myClassroom.getStudents()));
-        System.out.println(Arrays.toString(myClassroom.getStudentsByScore()));
-       // System.out.println(myClassroom.getGradeBook());
+       // System.out.println(Arrays.toString(myClassroom.getStudentsByScore()));
+      //  System.out.println(myClassroom.getGradeBook());
     }
 }
